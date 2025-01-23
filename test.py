@@ -1,5 +1,4 @@
 '''
-
 To Run:
 ``python test.py``
 '''
@@ -11,7 +10,7 @@ import pandas as pd
 import numpy as np
 
 #Read in your CSV file
-data = pd.read_csv("test_data-full-cropped-input.csv")
+data = pd.read_csv("test_data-full-cropped-input.csv") # <------ Change input file name here
 
 # Create a new column for the GPT output
 data['gpt_output'] = None
@@ -48,7 +47,7 @@ for index, row in data.iterrows():
     data.at[index, 'gpt_output'] = gpt_response # GPT response itr saved into data['gpt_output'] column created above
     print(f"Row {index + 1} - GPT Output: {gpt_response}")
 
-data.to_csv("test_data-full-output-35.csv", index=False) # Output saved back 
+data.to_csv("test_data-full-output-35.csv", index=False) # <------ Change desired output file name here
 
 # Print the modified DataFrame to the terminal
 print(data)
